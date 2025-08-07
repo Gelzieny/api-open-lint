@@ -1,6 +1,6 @@
 import re
 import unicodedata
-from App.models.perms_model import *
+from App.models.message_response_model import *
 
 just_numbers = lambda a: ''.join(re.findall("\d+", a))
 
