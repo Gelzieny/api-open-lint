@@ -1,0 +1,19 @@
+fastapi
+uvicorn[standard]
+gunicorn
+psycopg2-binary  # Use apenas a versão binária para simplificar a instalação
+
+# Bibliotecas de banco de dados
+SQLAlchemy==2.0.34
+
+# Bibliotecas de IA e LLMs
+langchain-google-genai
+upstash_vector
+openai
+
+# Ferramentas e utilitários
+pydantic-settings
+pydantic
+python-dotenv
+psutil
+requests
