@@ -9,7 +9,7 @@ class DatabaseType(str, enum.Enum):
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_file='.env', extra='ignore')
 
-    DATABASE_TYPE: DatabaseType = DatabaseType.SQLITE
+    DATABASE_TYPE: DatabaseType = DatabaseType.POSTGRES
 
     SQLITE_DB_PATH: Optional[str] = None
     
