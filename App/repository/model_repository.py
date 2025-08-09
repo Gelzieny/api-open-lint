@@ -1,11 +1,11 @@
 from fastapi import HTTPException
 
 from App.utils.utils import * 
-from App.dependencias.database import ConexaoPostgres
+from App.dependencias.database import ConexaoDB
 
 
 class ModeloRepository:
-    def __init__(self, db_connection: ConexaoPostgres):
+    def __init__(self, db_connection: ConexaoDB):
         self.base = db_connection
 
     def list_modelo(self, user: dict) -> list:

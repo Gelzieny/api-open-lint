@@ -1,17 +1,17 @@
 from fastapi import APIRouter, Body, Depends, HTTPException
 
 from App.utils.utils import *
-from App.dependencias.database import ConexaoPostgres
+from App.dependencias.database import ConexaoDB
 from App.repository.provedor_repository import AprovedorRepository
 
 provedor_controller = APIRouter()
 
 def get_db_connection():
-  # Aqui você pode criar uma instância da classe ConexaoPostgres ou recuperar uma instância existente
-  return ConexaoPostgres() # Retorna a instância singleton
+    # Aqui você pode criar uma instância da classe ConexaoDB ou recuperar uma instância existente
+    return ConexaoDB() # Retorna a instância singleton
 
 
-def get_provedor_repository(db: ConexaoPostgres = Depends(get_db_connection)):
+def get_provedor_repository(db: ConexaoDB = Depends(get_db_connection)):
     """
         Função de dependência para obter o AprovedorRepository
         Ele depende de get_db_connection para obter a instância da conexão.
