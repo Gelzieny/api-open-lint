@@ -2,17 +2,17 @@ from fastapi import APIRouter, Body, Depends, HTTPException
 
 from App.utils.utils import *
 from App.models.modelo_model import Modelo
-from App.dependencias.database import ConexaoPostgres
+from App.dependencias.database import ConexaoDB
 from App.repository.model_repository import ModeloRepository
 
 model_controller = APIRouter()
 
 def get_db_connection():
-    # Aqui você pode criar uma instância da classe ConexaoPostgres ou recuperar uma instância existente
-    return ConexaoPostgres() # Retorna a instância singleton
+    # Aqui você pode criar uma instância da classe ConexaoDB ou recuperar uma instância existente
+    return ConexaoDB() # Retorna a instância singleton
 
 
-def get_model_repository(db: ConexaoPostgres = Depends(get_db_connection)):
+def get_model_repository(db: ConexaoDB = Depends(get_db_connection)):
     """
         Função de dependência para obter o ModeloRepository
         Ele depende de get_db_connection para obter a instância da conexão.

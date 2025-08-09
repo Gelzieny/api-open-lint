@@ -8,7 +8,7 @@ load_dotenv()
 from App.utils.settings import settings, DatabaseType
 
 
-class ConexaoPostgres:
+class ConexaoDB:
     """
     Gerencia a conexão com o banco de dados PostgreSQL usando SQLAlchemy.
     Implementa o padrão Singleton para garantir uma única instância de pool de conexões.
@@ -18,17 +18,17 @@ class ConexaoPostgres:
     def __new__(cls, *args, **kwargs):
         """
         Método chamado antes de __init__ para controlar a criação da instância.
-        Garanta que apenas uma instância de ConexaoPostgres seja criada.
+        Garanta que apenas uma instância de ConexaoDB seja criada.
         """
         if cls._instance is None:
-            cls._instance = super(ConexaoPostgres, cls).__new__(cls)
+            cls._instance = super(ConexaoDB, cls).__new__(cls)
             cls._instance._initialize()  
         return cls._instance
 
     def _initialize(self):
         """
         Inicializa a conexão com o banco de dados. Este método é chamado apenas uma vez
-        quando a primeira instância da classe ConexaoPostgres é criada.
+        quando a primeira instância da classe ConexaoDB é criada.
         """
         
         if settings.DATABASE_TYPE.upper() == DatabaseType.POSTGRES:

@@ -1,11 +1,11 @@
 from fastapi import HTTPException
 
 from App.utils.utils import * 
-from App.dependencias.database import ConexaoPostgres
+from App.dependencias.database import ConexaoDB
 
 
 class AprovedorRepository:
-    def __init__(self, db_connection: ConexaoPostgres):
+    def __init__(self, db_connection: ConexaoDB):
         self.base = db_connection
 
     def list_provedor(self, user: dict) -> list:
