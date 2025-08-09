@@ -8,8 +8,8 @@ from App.repository.model_repository import ModeloRepository
 model_controller = APIRouter()
 
 def get_db_connection():
-  # Aqui você pode criar uma instância da classe ConexaoPostgres ou recuperar uma instância existente
-  return ConexaoPostgres() # Retorna a instância singleton
+    # Aqui você pode criar uma instância da classe ConexaoPostgres ou recuperar uma instância existente
+    return ConexaoPostgres() # Retorna a instância singleton
 
 
 def get_model_repository(db: ConexaoPostgres = Depends(get_db_connection)):
