@@ -7,6 +7,7 @@ psycopg2-binary  # Use apenas a versão binária para simplificar a instalação
 SQLAlchemy==2.0.34
 
 # Bibliotecas de IA e LLMs
+langchain-ollama
 langchain-google-genai
 upstash_vector
 openai
