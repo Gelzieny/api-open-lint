@@ -19,3 +19,8 @@ app.include_router(ia_valida_ia_controller)
 @app.get("/", include_in_schema=False)
 async def redirect_to_docs():
     return RedirectResponse(url="/docs")
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
